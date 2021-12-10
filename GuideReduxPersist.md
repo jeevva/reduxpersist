@@ -187,9 +187,13 @@ import Cookies from 'cookies-js'; //libraries to help put your state into cookie
 
 const persistConfig = {
   key: 'root',
-  storage : new CookieStorage(Cookies, {}), // Set up Cookie Storage Engine
-whitelist:['auth'],
-blacklist:['anything-you-want'],
+  storage : new CookieStorage(Cookies, { // Set up Cookie Storage Engine
+    //set expired for 2 hours
+    expiration: {
+    'default': 12000
+  }}), 
+  whitelist:['auth'],
+  blacklist:['anything-you-want'],
 };
 
 
