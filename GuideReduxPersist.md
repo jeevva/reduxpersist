@@ -22,7 +22,7 @@ npm install @reduxjs/toolkit --save
 |   |_index.js (store configuration)
 |_index.js (Main index)
 ```
-![DIR](https://github.com/jeevva/reduxpersist/Dir.PNG)
+![DIR](./Dir.PNG)
 ### Step 3 - Create Reducer example => Auth Reducer
 
 dir : /src/store/reducer/auth.js
