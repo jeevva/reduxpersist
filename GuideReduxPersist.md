@@ -241,6 +241,6 @@ reportWebVitals();
 And the run your app , after run app check your cookies . for step check cookies
 > Inspect > application >LocalStorage
 
-![LocalStorage](./LocalStorage.PNG)
+![LocalStorage](./CookieStorage.PNG)
 
 Good Luck , Happy codinggg ..
