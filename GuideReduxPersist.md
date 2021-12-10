@@ -1,4 +1,4 @@
-# How implement Redux Persist X Redux Toolkit
+# How to implement Redux Persist X Redux Toolkit
 
 ## 1. Redux Persist (Local Storage)
 
