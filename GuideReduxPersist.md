@@ -206,7 +206,7 @@ export default store;
 ### Step 6 - Set up your main index
 dir:/src/index.js
 
-#### What different ???? just import store and declare presistor
+#### What different ???? just import store and declare persistor
 
 ```javascript
 import React from "react";
