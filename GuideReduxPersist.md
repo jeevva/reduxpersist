@@ -13,16 +13,13 @@ npm install @reduxjs/toolkit --save
 
 ### Step 2 - Prepare your Dir
 
-```
-|_/src
-| |_/store
-|   |_/reducer
-|	| |_auth.js (reducer auth , "just example")
-|   | |_index.js (for combineReducers)
-|   |_index.js (store configuration)
-|_index.js (Main index)
-```
 ![DIR](./Dir.PNG)
+
+1. /src/index.js (Main index)
+2. /src/store/ index.js (store configuration)
+3. /src/store/reducer/auth.js (reducer auth , "just example")
+4. /src/store/reducer/index.js (for combineReducers)
+
 ### Step 3 - Create Reducer example => Auth Reducer
 
 dir : /src/store/reducer/auth.js
@@ -157,5 +154,5 @@ npm start
 > For Checking
 >
 > Inspect > application >LocalStorage
-
+![LocalStorage](./LocalStorage.PNG)
 Good Luck , Happy codinggg ..
