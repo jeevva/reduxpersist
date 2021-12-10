@@ -154,5 +154,93 @@ npm start
 > For Checking
 >
 > Inspect > application >LocalStorage
+
 ![LocalStorage](./LocalStorage.PNG)
+
+
+
+## 2. Redux Persist (Cookies Storage) 
+maybe this is compatible in all types and versions of browsers
+
+### Step 1 - Install Redux persist cookies store
+Previously you had to install redux persit and toolkit bro.. 
+Please, Look in the first guide
+
+```javascript
+// install redux-persist-cookie-storage
+npm install  redux-persist-cookie-storage --save
+// you need install cookies js for save your state on your cookie storage engine
+npm install cookies-js --save
+```
+
+### Step 2 to 4 - Like a  guide 1. Redux Persist (Local Storage), Lets go to Step 5
+### Step 5 - Config your store 
+
+dir : /src/store/index.js
+```javascript
+import {configureStore} from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+import thunk from 'redux-thunk';
+import reducers from '../reducer';
+import { CookieStorage } from 'redux-persist-cookie-storage'; // Choose Cookie Storage Engine
+import Cookies from 'cookies-js'; //libraries to help put your state into cookies
+
+const persistConfig = {
+  key: 'root',
+  storage : new CookieStorage(Cookies, {}), // Set up Cookie Storage Engine
+whitelist:['auth'],
+blacklist:['anything-you-want'],
+};
+
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: [thunk]
+});
+
+export default store;
+```
+
+### Step 6 - Set up your main index
+dir:/src/index.js
+What different ???? just import store and declare presistor
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import App from "./containers/screens/App";
+import { BrowserRouter } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import store from "./store/cookie";
+
+let persistor = persistStore(store, {});
+ReactDOM.render(
+    <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </PersistGate>
+    </Provider>,
+    document.getElementById("root")
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+```
+And the run your app , after run app check your cookies . for step check cookies
+> Inspect > application >LocalStorage
+
+![LocalStorage](./LocalStorage.PNG)
+
 Good Luck , Happy codinggg ..
