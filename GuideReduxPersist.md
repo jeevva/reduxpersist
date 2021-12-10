@@ -205,7 +205,8 @@ export default store;
 
 ### Step 6 - Set up your main index
 dir:/src/index.js
-What different ???? just import store and declare presistor
+
+#### What different ???? just import store and declare presistor
 
 ```javascript
 import React from "react";
@@ -242,4 +243,4 @@ And the run your app , after run app check your cookies . for step check cookies
 > Inspect > application > Cookie
 ![CookieStorage](./CookieStorage.PNG)
 
-Good Luck , Happy codinggg ..
+##### Good Luck , Happy codinggg ..
